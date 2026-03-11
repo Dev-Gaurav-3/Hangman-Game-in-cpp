@@ -3,7 +3,7 @@ using namespace std;
 
 struct WordHint {
     string word;
-    string hint;
+    string hint; // hint before the round starts
 };
 
 void drawHangman(int chance) {
@@ -19,7 +19,7 @@ void drawHangman(int chance) {
 
 int main() {
 
-    vector<WordHint> words = {
+    vector<WordHint> words = {                     // vector storing words and their hints 
         {"apple", "A fruit"},
         {"computer", "Electronic machine"},
         {"programming", "Writing code"},
@@ -42,12 +42,12 @@ int main() {
         {"linux", "Popular open-source operating system"},
     };
 
-    srand(time(0));
+    srand(time(0)); // give times in seconds
 
-    int index = rand() % words.size();
+    int idx = rand() % words.size(); 
 
-    string word = words[index].word;
-    string hint = words[index].hint;
+    string word = words[idx].word;
+    string hint = words[idx].hint;
 
     string guessed(word.length(), '_');
 
